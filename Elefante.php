@@ -4,7 +4,7 @@ require_once 'Animal.php';
 
 class Elefante extends Animal {
 
-    public function __toString()
+    function __toString()
     {
        return 'Animal: Elefante ';
     }

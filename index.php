@@ -9,24 +9,20 @@ $requestMethod = $_SERVER["REQUEST_METHOD"];
 $paths = $_SERVER['REQUEST_URI'];
 
 $i = 120;
-$parque = [
-            [[],[],[]],
-            [[],[],[]],
-            [[],[],[]]
-        ];
+$parque = array_fill(0,10,'');
 
-$a = new Elefante("a","a","a","a");
-$b = Factoria::crearElefante();
 
-echo json_encode([$a, $b]);
+
 
 while($i>0){
     if($i % 10 == 0){
-
+        $rnd = rand(0,(count($parque)-1));
+        $animal = Factoria::rtnAnimRnd();
+        if(!empty($parque[$rnd])) $animal;
     }
 
     if($i % 2 == 0){
-
+        
     }
 
     if($i % 15 == 0){

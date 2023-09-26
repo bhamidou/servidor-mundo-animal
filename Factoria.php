@@ -11,34 +11,49 @@ class Factoria{
     static $raza = ["Siames","Dogo","Persa" ];
     static $peso = 0;
     static $color = ["Negro", "Azul","Amarillo", "Rojo", "Cafe", "Naranja", "Rosa", "Blanco","Verde"];
-
+    
     static function crearElefante(){
         $elefante = new Elefante(self::$nombre[rand(0,count(self::$nombre)-1)],self::$raza[rand(0,count(self::$raza)-1)] ,rand(1,1000),self::$color[rand(0,count(self::$color)-1)]);
         return $elefante;
     }
 
     static function crearGato(){
-        $elefante = new Gato(self::$nombre[rand(0,count(self::$nombre)-1)],self::$raza[rand(0,count(self::$raza)-1)] ,rand(1,1000),self::$color[rand(0,count(self::$color)-1)]);
-        return $elefante;
+        $gato = new Gato(self::$nombre[rand(0,count(self::$nombre)-1)],self::$raza[rand(0,count(self::$raza)-1)] ,rand(1,1000),self::$color[rand(0,count(self::$color)-1)]);
+        return $gato;
     }
 
     static function crearPerro(){
-        $elefante = new Perro(self::$nombre[rand(0,count(self::$nombre)-1)],self::$raza[rand(0,count(self::$raza)-1)] ,rand(1,1000),self::$color[rand(0,count(self::$color)-1)]);
-        return $elefante;
+        $perro = new Perro(self::$nombre[rand(0,count(self::$nombre)-1)],self::$raza[rand(0,count(self::$raza)-1)] ,rand(1,1000),self::$color[rand(0,count(self::$color)-1)]);
+        return $perro;
     }
 
-    // static function rtnAnimRnd(){
-    //     $a = rand(1,100);
-    //     $rtnAn = crearElefante();
+     static function rtnAnimRnd(){
+         $a = rand(1,100);
+         $rtnAn = self::crearElefante();
 
+         if($a<=33){
+             $rtnAn = self::crearPerro();
+         }elseif ($a>=33 && $a<=66) {
+             $rtnAn = self::crearGato();
+         }
+
+         return $rtnAn;
+     }
+
+    //  static function realizaAccion(){
+    //     $a = rand(1,100);
+    //     $rtnAn = self::crearElefante();
     //     if($a<=33){
-    //         $rtnAn = crearPerro();
-    //     }elseif ($a>=33 && $a<66) {
-    //         $rtnAn = crearGato();
+    //         $rtnAn = self::crearPerro();
+    //     }elseif ($a>=33 && $a<=66) {
+    //         $rtnAn = self::crearGato();
+    //         $rtnAn->;
+    //     }else{
+    //         $rtnAn->barrita();
     //     }
 
     //     return $rtnAn;
-    // }
+    //  }
 
 
 }
